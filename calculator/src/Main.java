@@ -39,10 +39,8 @@ public class Main {
                     break;
                 }
                 case 2: {
-                    System.out.print("Введите первое число: ");
-                    num1 = sc.nextInt();
-                    System.out.print("Введите второе число: ");
-                    num2 = sc.nextInt();
+                    num1 = readNum(sc, "Введите первое число: ");
+                    num2 = readNum(sc, "Введите второе число: ");
                     answer = calc.sum(num1, num2);
                     AnswConverter answ = new AnswConverter(answer);
                     answ.printAnswer();
@@ -56,5 +54,10 @@ public class Main {
                 }
             }
         }
+    }
+
+    private static int readNum(Scanner sc, String message) {
+        System.out.print(message);
+        return Integer.parseInt(sc.nextLine());
     }
 }
