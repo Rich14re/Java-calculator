@@ -9,8 +9,16 @@ public class CalculatorOperations extends Calculator {
         return a * b;
     }
 
+    public int min(int a, int b) {
+        return a - b;
+    }
+
     @Override
     public int div(int a, int b) {
+        if (b == 0) {
+            System.out.println("Деление на ноль!");
+            return 0;
+        }
         return a / b;
     }
 }

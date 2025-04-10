@@ -4,12 +4,7 @@ public class Main {
     public static void main(String[] args) {
         boolean exit = false;
         Scanner sc = new Scanner(System.in);
-        Calculator calc = new CalculatorOperations();
-
-        int num_system = 10;
-        int num2;
-        int num1;
-        int answer = 0;
+        CalculatorOperations operations = new CalculatorOperations();
 
         while(!exit){
             System.out.println("Выберите действие... ");
@@ -30,34 +25,30 @@ public class Main {
 
                     //меняем систму счисления
                     switch (numer_system){
-                        case 1 -> num_system = 2;
-                        case 2 -> num_system = 8;
-                        case 3 -> num_system = 10;
-                        case 4 -> num_system = 16;
+                        case 1 -> operations.setNumber_system(2);
+                        case 2 -> operations.setNumber_system(8);
+                        case 3 -> operations.setNumber_system(10);
+                        case 4 -> operations.setNumber_system(16);
                         default -> System.out.println("неизвестная сист. счисления");
                     };
                     break;
                 }
                 case 2: {
-                    num1 = readNum(sc, "Введите первое число: ");
-                    num2 = readNum(sc, "Введите второе число: ");
-                    answer = calc.sum(num1, num2);
-                    AnswConverter answ = new AnswConverter(answer);
-                    answ.printAnswer();
+                    operations.readAndApplyOper(sc, ch); //проводим сложение
                     break;
                 }
-                case 3: break;
-                case 4: break;
+                case 3: {
+                    operations.readAndApplyOper(sc, ch); //проводим вычитание
+                    break;
+                }
+                case 4:{
+                    operations.readAndApplyOper(sc, ch); //проводим деление
+                    break;}
                 case 5: {
                     exit = true;
                     break;
                 }
             }
         }
-    }
-
-    private static int readNum(Scanner sc, String message) {
-        System.out.print(message);
-        return Integer.parseInt(sc.nextLine());
     }
 }
