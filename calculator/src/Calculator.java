@@ -42,7 +42,7 @@ public abstract class Calculator {
             case 2 -> sum(a, b);
             case 3 -> min(a, b);
             case 4 -> div(a, b);
-            //case 5 -> sub(a, b);
+            case 5 -> sub(a, b);
             default -> throw new IllegalArgumentException("неизвестная операция");
         };
         AnswConverter answ = new AnswConverter(res);

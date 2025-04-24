@@ -12,7 +12,8 @@ public class Main {
             System.out.println("2. Сложение");
             System.out.println("3. Вычитание");
             System.out.println("4. Деление");
-            System.out.println("5. Выход");
+            System.out.println("5. Умножение");
+            System.out.println("6. Выход");
 
             int ch = sc.nextInt();
             sc.nextLine();
@@ -43,8 +44,13 @@ public class Main {
                 }
                 case 4:{
                     operations.readAndApplyOper(sc, ch); //проводим деление
-                    break;}
-                case 5: {
+                    break;
+                }
+                case 5:{
+                    operations.readAndApplyOper(sc, ch); //проводим умножение
+                    break;
+                }
+                case 6: {
                     exit = true;
                     break;
                 }
