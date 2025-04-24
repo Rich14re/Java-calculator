@@ -5,26 +5,9 @@ public abstract class Calculator {
     private int num_one;
     private int num_two;
 
-    //region геттеры и сеттеры для приватных полей
-    public int getNumber_system(){
-        return number_system;
-    }
+    //region геттеры и сеттеры
     public void setNumber_system(int number_system){
         this.number_system = number_system;
-    }
-
-    public int getNum_one() {
-        return num_one;
-    }
-    public void setNum_one(int num_one) {
-        this.num_one = num_one;
-    }
-
-    public int getNum_two() {
-        return num_two;
-    }
-    public void setNum_two(int num_two) {
-        this.num_two = num_two;
     }
     //endregion
 
