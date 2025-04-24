@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public abstract class Calculator {
-    private int number_system;
+    private int number_system = 10;
     private int num_one;
     private int num_two;
 
@@ -39,10 +39,10 @@ public abstract class Calculator {
         int b = readNumberWithBase(sc, "введите второе число: ");
 
         int res = switch (operation){
-            case 1 -> sum(a, b);
-            case 2 -> min(a, b);
-            case 3 -> div(a, b);
-            case 4 -> sub(a, b);
+            case 2 -> sum(a, b);
+            case 3 -> min(a, b);
+            case 4 -> div(a, b);
+            //case 5 -> sub(a, b);
             default -> throw new IllegalArgumentException("неизвестная операция");
         };
         AnswConverter answ = new AnswConverter(res);
@@ -58,7 +58,8 @@ public abstract class Calculator {
         } catch (NumberFormatException e) {
             System.out.println("ошибка: введено число, выходящее за пределы системы счисления " + number_system);
             System.out.println("установлена система счисления: десятичная");
-            return 10;
+            number_system = 10;
+            return Integer.parseInt(input, number_system);
         }
     }
 }
